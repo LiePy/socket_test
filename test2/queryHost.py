@@ -8,14 +8,14 @@
 
 import sys
 import socket
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWidgets import QMainWindow, QApplication
 
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(359, 361)
+        Dialog.resize(359, 300)
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(30, 46, 72, 15))
         self.label.setObjectName("label")
@@ -40,12 +40,6 @@ class Ui_Dialog(object):
         self.textBrowser = QtWidgets.QTextBrowser(Dialog)
         self.textBrowser.setGeometry(QtCore.QRect(30, 140, 291, 121))
         self.textBrowser.setObjectName("textBrowser")
-        self.pushButton_3 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_3.setGeometry(QtCore.QRect(50, 310, 93, 28))
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_4 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_4.setGeometry(QtCore.QRect(220, 310, 93, 28))
-        self.pushButton_4.setObjectName("pushButton_4")
         self.line = QtWidgets.QFrame(Dialog)
         self.line.setGeometry(QtCore.QRect(30, 110, 291, 16))
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
@@ -57,14 +51,12 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "QueryHost"))
         self.label.setText(_translate("Dialog", "域名："))
         self.label_2.setText(_translate("Dialog", "IP地址："))
         self.pushButton.setText(_translate("Dialog", "查询"))
         self.pushButton_2.setText(_translate("Dialog", "查询"))
         self.label_3.setText(_translate("Dialog", "主机信息："))
-        self.pushButton_3.setText(_translate("Dialog", "确定"))
-        self.pushButton_4.setText(_translate("Dialog", "取消"))
         self.pushButton.clicked.connect(self.click_ym)      # 设置按钮关联动作
         self.pushButton_2.clicked.connect(self.click_ip)     # 设置按钮关联动作
 
@@ -82,8 +74,8 @@ class Ui_Dialog(object):
             print(e)
         else:
             self.lineEdit_2.setText(ip)     # 显示信息
-            textView = '主机名：' + ym +'\nIP地址：' + ip + '\n作者：15计算机' \
-                                                     '172班 03号 王磊'
+            textView = '主机名：' + ym2 +'\nIP地址：' + ip + '\n作者：15计算机' \
+                                                     '172班 03号 LiePy'
             self.textBrowser.setText(textView)      # 显示信息
             self.lineEdit.setText(ym2)      # 显示信息
 
@@ -101,7 +93,7 @@ class Ui_Dialog(object):
         self.lineEdit.setText(ym)       # 显示信息
         self.lineEdit_2.setText(ip)     # 显示信息
         textView = '主机名：' + ym +'\nIP地址：' + ip + '\n作者：15计算机' \
-                                                 '172班 03号 王磊'
+                                                 '172班 03号 LiePy'
         self.textBrowser.setText(textView)      # 显示信息
 
 

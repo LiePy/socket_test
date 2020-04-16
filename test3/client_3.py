@@ -9,8 +9,8 @@
 import sys
 import socket
 import threading
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWidgets import QMainWindow, QApplication
 
 
 class Ui_Dialog(object):
@@ -58,11 +58,11 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "发送"))
         self.lineEdit.setText("127.0.0.1")
         self.lineEdit_2.setText("21567")
-        self.pushButton.clicked.connect(self.t)
+        self.pushButton.clicked.connect(self.sendMSG)
 
-    def t(self, function):  # 创建新进程
-        t1 = threading.Thread(target=self.sendMSG, name='button', kwargs=None)
-        t1.start()      # 启动线程
+    # def t(self, function):  # 创建新进程
+    #     t1 = threading.Thread(target=self.sendMSG, name='button', kwargs=None)
+    #     t1.start()      # 启动线程
 
     def sendMSG(self):      # 按钮触发事件
         addr_1 = self.lineEdit.text()   # 获取服务器地址
