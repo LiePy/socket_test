@@ -12,31 +12,48 @@ import time
 import socket
 import threading
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox
-from PyQt5.QtCore import QThread, pyqtSignal, QDateTime, QObject
+from PyQt5.Qt import *
+
 
 
 class BackendThread(QObject):   # 用来实时更新显示收到的消息
     # 通过类成员对象定义信号
     update_date = pyqtSignal(str)
 
-    # 处理业务逻辑
     def run(self):
         while True:
-            data = QDateTime.currentDateTime()
-            currTime = data.toString("yyyy-MM-dd hh:mm:ss")
-            self.update_date.emit(str(currTime))
+            self.update_date.emit('')
             time.sleep(1)
+
+class MyQMessageBox(QMessageBox):
+    def __init__(self, parent=None):
+        super(MyQMessageBox, self).__init__()
+        self.title = 'tips'
+        self.message = '连接成功'
+        self.box = QMessageBox(QMessageBox.Critical, self.title, self.message,
+                               QMessageBox.NoButton, parent)
+        Ok = self.box.addButton('好的', QMessageBox.YesRole)
+
+        Ok.clicked.connect(self.Ok)
+
+        self.box.setIcon(3)
+        self.box.setGeometry(200,200,0,0)
+        self.box.show()
+
+    def Ok(self):
+        print('OK')
+        self.box.exec_()
 
 
 
 class Ui_Dialog(object):
     def __init__(self):
-        self.t2 = []
-        self.s = socket.socket()
-        self.c = []
-        self.msg = ''
-        self.flag = False
+        self.t2 = []    # 用来存放线程的列表
+        self.s = socket.socket()    # 服务器socket
+        self.c = []     # 客户端socket列表
+        self.msg = ''   # 需要显示的消息
+        self.count = 0
+        self.flag = False   # 服务器的开启状态
 
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
@@ -82,6 +99,7 @@ class Ui_Dialog(object):
         self.label_2.setText(_translate("Dialog", "在线人数："))
         self.lineEdit.setText('21567')
         self.pushButton.clicked.connect(self.listen_button)
+        self.pushButton.clicked.connect(self.showdialog)
         self.pushButton_2.clicked.connect(self.break_button)
         self.pushButton_2.setEnabled(False)    # 初始化未监听时断开按钮不可点击
 
@@ -107,15 +125,16 @@ class Ui_Dialog(object):
         t1.start()
         self.pushButton.setEnabled(False)       # 点击监听按钮后该按钮将不可点击
         self.pushButton_2.setEnabled(True)
-        self.flag = True
+        self.flag = True        # 服务器开启
 
     def break_button(self):     # 断开按钮
-        self.s.close()
-        if len(self.c) > 0:
+        if self.count > 0:
             for cc in self.c:
-                cc.send('{}服务器已断开!'.format(time.ctime()).encode('GB2312'))
-                cc.close()
+                if cc != 0:     # 因为后面断开的客户端socket将它置为0了
+                    cc.send('{}服务器已断开!\n'.format(time.ctime()).encode('GB2312'))
+                    cc.close()
             self.c.clear()
+        self.s.close()
         self.pushButton.setEnabled(True)        # 点击断开按钮后，监听按钮可用
         self.pushButton_2.setEnabled(False)
         self.flag = False
@@ -125,7 +144,8 @@ class Ui_Dialog(object):
             while 1:
                 print('等待连接中。。。')
                 c_, addr = self.s.accept()
-                self.c.append(c_)
+                self.c.append(c_)   # 将c_即客户端socket存入列表
+                self.count += 1
                 print(addr, '已连接')
                 t2_ = threading.Thread(target=self.rec_msg, args=(len(self.c)-1,))
                 self.t2.append(t2_)
@@ -133,9 +153,9 @@ class Ui_Dialog(object):
         except:
             pass
 
-    def handleDisplay(self, data):      # 显示收到的信息
+    def handleDisplay(self):      # 显示收到的信息
         self.textBrowser.setText(self.msg)
-        self.label_2.setText('在线人数：{}'.format(len(self.c)))
+        self.label_2.setText('在线人数：{}'.format(self.count))
         self.textBrowser.moveCursor(self.textBrowser.textCursor().End)  # 文本框显示到底部
 
     def rec_msg(self, i):      # 接受信息
@@ -147,25 +167,41 @@ class Ui_Dialog(object):
                 if '进入聊天室~' in msg:       # 服务器端不会显示客户聊天的内容，只显示进入的用户
                     self.msg += msg
                 for step, x in enumerate(self.c):      # 当收到客户消息时，转发给其他所有在线客户
-                    if step != i:
+                    if step != i and x != 0:
                         x.send(msg.encode('GB2312'))
                 if '退出聊天室' in msg:
                     self.msg += msg
-                    del self.c[i]
+                    self.count -= 1
+                    self.c[i] = 0
                     print(len(self.c))
                     # self.t2[i]._stop()    # 线程不能强制退出，所以下面用break正常结束
                     print('结束', len(self.t2))
                     break
                 if self.flag is False:
-                    break
+                    break       # 如果服务器停止，则退出循环
         except ConnectionAbortedError as e1:
             print(e1)
 
+    def showdialog(self):       # 定义监听按钮弹出消息框
+        dialog = QDialog()
+
+        btn = QPushButton('OK',dialog)    # 增加一个Ok按钮
+        btn.clicked.connect(dialog.exec_)
+        btn.move(50, 50)
+
+        tip = QLabel(dialog)
+        tip.setText('开始监听...')
+        tip.move(60,20)
+        dialog.setWindowTitle("提示")
+
+        dialog.show()
+        dialog.setWindowModality(Qt.ApplicationModal)   # 设定只有关闭弹出对话窗口后才能操作其他窗口
+        dialog.exec_()
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
+    MainWindow = QWidget()
     ui = Ui_Dialog()
     ui.setupUi(MainWindow)
     MainWindow.show()

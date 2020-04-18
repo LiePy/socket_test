@@ -95,7 +95,7 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "客户端"))
         self.label.setText(_translate("Dialog", "客户名："))
-        self.lineEdit.setText(_translate("Dialog", "Lili"))
+        self.lineEdit.setText(_translate("Dialog", "Mike"))
         self.label_2.setText(_translate("Dialog", "服务器名："))
         self.lineEdit_2.setText(_translate("Dialog", "127.0.0.1"))
         self.label_4.setText(_translate("Dialog", "端口号："))
@@ -132,12 +132,12 @@ class Ui_Dialog(object):
             self.s.send('[{}]{}进入聊天室~\n'.format(time.ctime(), name).encode('GB2312'))
             t = threading.Thread(target=self.rec_msg)
             t.start()
-            self.pushButton.setEnabled(True)
-            self.pushButton_2.setEnabled(False)
-            self.pushButton_3.setEnabled(True)
-            self.lineEdit.setEnabled(False)
+            self.pushButton.setEnabled(True)    # 连接后可以断开
+            self.pushButton_2.setEnabled(False) # 连接后不可以再连接
+            self.pushButton_3.setEnabled(True)  # 连接后才能发送
+            self.lineEdit.setEnabled(False)     # 连接后不可以修改用户名
         except:
-            self.msg += '服务器未开放！'
+            self.msg += '服务器未开放！\n'
             print('服务器未开放！')
 
     def break_button(self):  # 断开按钮
@@ -146,10 +146,10 @@ class Ui_Dialog(object):
         self.s.close()
         print('已关闭服务器')
         self.msg += '您已退出登录\n'
-        self.textBrowser.setText(self.msg)
-        self.pushButton.setEnabled(False)
-        self.pushButton_2.setEnabled(True)
-        self.pushButton_3.setEnabled(False)
+        self.pushButton.setEnabled(False)   # 断开后不能再断开
+        self.pushButton_2.setEnabled(True)  # 断开后可以连接
+        self.pushButton_3.setEnabled(False) # 断开后不能发送
+        self.lineEdit.setEnabled(True)      # 断开后可以修改用户名
 
     def send_button(self):  # 发送按钮
         name = self.lineEdit.text()
@@ -173,7 +173,7 @@ class Ui_Dialog(object):
                 print(self.msg)
         except ConnectionAbortedError as e1:
             print(e1)
-        except ConnectionResetError as e2:
+        except ConnectionResetError as e2:      # 这里是捕获服务器端强行断开异常
             print(e2)
             self.pushButton.setEnabled(False)
             self.pushButton_2.setEnabled(True)

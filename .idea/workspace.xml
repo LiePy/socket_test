@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c403a0f7-c4ae-4441-b5aa-0fdbacd6d5bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2/queryHost.py" beforeDir="false" afterPath="$PROJECT_DIR$/test2/queryHost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test3/client_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/test3/client_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test5/client_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/test5/client_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test5/client_5_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/test5/client_5_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test5/server_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/test5/server_5.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,21 +31,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test5" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Work\PythonProjects\winsock_test\test4" />
-      <recent name="D:\Work\PythonProjects\winsock_test\test5" />
-      <recent name="D:\Work\PythonProjects\winsock_test\test2" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Work\PythonProjects\winsock_test\test2" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\PythonProjects\winsock_test\test5" />
+      <recent name="D:\Work\PythonProjects\winsock_test\test4" />
+      <recent name="D:\Work\PythonProjects\winsock_test\test2" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.client_4">
-    <configuration name="client_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.client_5_2">
+    <configuration name="client_5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="winsock_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -53,11 +53,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test3/client_3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test5/client_5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -66,7 +66,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="client_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="client_5_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="winsock_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -74,11 +74,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test4/client_4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test5/client_5_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -87,7 +87,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="server_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="client_5_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="winsock_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -95,11 +95,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test3/server_3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test5/client_5_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -108,7 +108,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="server_4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="server_5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="winsock_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -116,11 +116,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test4/server_4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test5/server_5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -129,7 +129,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="server_4_bak" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test_MessageBox" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="winsock_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -137,11 +137,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test4/server_4_bak.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test5/test_MessageBox.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.client_4" />
-        <item itemvalue="Python.server_4" />
-        <item itemvalue="Python.server_4_bak" />
-        <item itemvalue="Python.server_3" />
-        <item itemvalue="Python.client_3" />
+        <item itemvalue="Python.client_5_2" />
+        <item itemvalue="Python.server_5" />
+        <item itemvalue="Python.client_5" />
+        <item itemvalue="Python.client_5_1" />
+        <item itemvalue="Python.test_MessageBox" />
       </list>
     </recent_temporary>
   </component>
@@ -194,26 +194,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="973" y="349" width="382" height="172" key="Github.CreateGistDialog/0.0.1536.864@0.0.1536.864" timestamp="1586842768794" />
-    <state width="724" height="200" key="GridCell.Tab.0.bottom" timestamp="1587024758972">
+    <state width="588" height="152" key="GridCell.Tab.0.bottom" timestamp="1587210771958">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="723" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585819964893" />
-    <state width="724" height="200" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1587024758972" />
-    <state width="724" height="200" key="GridCell.Tab.0.center" timestamp="1587024758972">
+    <state width="588" height="152" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1587210771958" />
+    <state width="588" height="152" key="GridCell.Tab.0.center" timestamp="1587210771958">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="723" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585819964892" />
-    <state width="724" height="200" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1587024758972" />
-    <state width="724" height="200" key="GridCell.Tab.0.left" timestamp="1587024758971">
+    <state width="588" height="152" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1587210771958" />
+    <state width="588" height="152" key="GridCell.Tab.0.left" timestamp="1587210771958">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="723" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585819964892" />
-    <state width="724" height="200" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1587024758971" />
-    <state width="724" height="200" key="GridCell.Tab.0.right" timestamp="1587024758972">
+    <state width="588" height="152" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1587210771958" />
+    <state width="588" height="152" key="GridCell.Tab.0.right" timestamp="1587210771958">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="723" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585819964892" />
-    <state width="724" height="200" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1587024758972" />
+    <state width="588" height="152" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1587210771958" />
     <state width="726" height="274" key="GridCell.Tab.1.bottom" timestamp="1586664776831">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -234,10 +234,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="540" y="78" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1587016952421" />
-    <state x="833" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1587013094524">
+    <state x="833" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1587177882746">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="833" y="257" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1587013094524" />
+    <state x="833" y="257" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1587177882746" />
     <state x="767" y="31" width="642" height="801" key="find.popup" timestamp="1586842929850">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

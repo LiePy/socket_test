@@ -12,9 +12,8 @@ import time
 import socket
 import threading
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QApplication
-from PyQt5.QtCore import QThread, pyqtSignal, QDateTime, QObject
 from test5.server_5 import BackendThread
+from PyQt5.Qt import *
 
 
 class Ui_Dialog(object):
@@ -136,13 +135,14 @@ class Ui_Dialog(object):
             self.pushButton.setEnabled(True)
             self.pushButton_2.setEnabled(False)
             self.pushButton_3.setEnabled(True)
+            self.lineEdit.setEnabled(False)
         except:
             self.msg += '服务器未开放！'
             print('服务器未开放！')
 
     def break_button(self):  # 断开按钮
         name = self.lineEdit.text()
-        self.s.send('[{}]{}退出聊天室'.format(time.ctime(), name).encode('GB2312'))
+        self.s.send('[{}]{}退出聊天室\n'.format(time.ctime(), name).encode('GB2312'))
         self.s.close()
         print('已关闭服务器')
         self.msg += '您已退出登录\n'
